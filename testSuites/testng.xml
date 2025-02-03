@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Extreme Burrito Test Suite" parallel="tests">
+
+    <listeners>
+        <listener class-name="testComponents.Listeners"/>
+    </listeners>
+    <test name="Verify Home">
+        <classes>
+            <class name="tests.extremeBurritoTest"/>
+
+        </classes>
+    </test>
+</suite>
