@@ -8,7 +8,6 @@
           <include name="launchApp"/>
           <include name="tearDown"/>
           <include name="careerPageTest" invocation-numbers="0"/>
-          <include name="aboutUsPageTest"/>
         </methods>
       </class> <!-- tests.extremeBurritoTest -->
     </classes>

@@ -66,13 +66,15 @@ WebElement contactUsValidationMsg;
         contactusEmail.sendKeys(email);
         contactUsPhone.sendKeys(phone);
         contactUsLocation.sendKeys(location);
+        scrollIntoViewIfNeeded(contactUsComment);
         contactUsComment.sendKeys(comment);
+        scrollIntoViewIfNeeded(contactUsSubmitBtn);
         contactUsSubmitBtn.click();
         waitFoWebElementToAppear(contactUsValidationMsg);
         scrollIntoViewIfNeeded(contactUsValidationMsg);
 
         if (contactUsValidationMsg.isDisplayed())
-            System.out.println("Msg displayed");
+            System.out.println("Msg displayed is:"+" "+contactUsValidationMsg.getText());
         else
             System.out.println("Msg not displayed");
     }

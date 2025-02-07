@@ -1,8 +1,5 @@
 package tests;
-import Pages.AboutUs;
-import Pages.Careers;
-import Pages.ContactUs;
-import Pages.Menu;
+import Pages.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import testComponents.BaseTest;
@@ -53,6 +50,16 @@ public class extremeBurritoTest extends BaseTest {
         Careers careers = new Careers(driver);
         careers.verifyCareerPageUIElements();
         careers.fillCareers(input.get("name"),input.get("email"),input.get("phone"),input.get("location"),input.get("coverLetter"), input.get("cv"));
+    }
+
+    @Test(dataProvider = "getData")
+    public void franchisePageTest(HashMap<String, String> input)
+    {
+        home.goToFranchisePage();
+        Franchise franchise = new Franchise(driver);
+        franchise.verifyFranchisePageTitles();
+        franchise.fillFranchiseForm(input.get("name"),input.get("email"),input.get("phone"),input.get("location"),input.get("vision"));
+
     }
 
 

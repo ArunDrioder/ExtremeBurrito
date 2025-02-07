@@ -34,6 +34,9 @@ public class Home extends AbstractComponent {
     @FindBy(xpath = "//nav[@id='header-menu']//a[normalize-space()='Careers']")
     WebElement careersHeaderButton;
 
+    @FindBy(xpath = "//nav[@id='header-menu']//a[normalize-space()='Franchise']")
+    WebElement franchiseHeaderButton;
+
 
     public Home(WebDriver driver) {
         super(driver);
@@ -119,6 +122,13 @@ public class Home extends AbstractComponent {
     {
         careersHeaderButton.click();
         return new Careers(driver);
+
+    }
+
+    public Franchise goToFranchisePage()
+    {
+        franchiseHeaderButton.click();
+        return new Franchise(driver);
 
     }
 

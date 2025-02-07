@@ -37,6 +37,9 @@ public class Careers extends AbstractComponent
     @FindBy(xpath = "//button[@type='submit']")
     WebElement careerFormSubmitBtn;
 
+    @FindBy(xpath = "//p[normalize-space()='Failed to send message.']")
+    WebElement careerFormValidationMsg;
+
 
     public Careers(WebDriver driver) {
         super(driver);
@@ -58,8 +61,16 @@ public class Careers extends AbstractComponent
         careerInputPhone.sendKeys(phone);
         careerInputCity.sendKeys(city);
         careerInputCoverLetter.sendKeys(coverLetter);
+        scrollIntoViewIfNeeded(careerInputCV);
         careerInputCV.sendKeys(cv);
+        scrollIntoViewIfNeeded(careerFormSubmitBtn);
         careerFormSubmitBtn.click();
+        waitFoWebElementToAppear(careerFormValidationMsg);
+
+        if (careerFormValidationMsg.isDisplayed())
+            System.out.println("Msg Displayed is"+" "+careerFormValidationMsg.getText());
+        else
+            System.out.println("Msg not Displayed");
     }
 
 
