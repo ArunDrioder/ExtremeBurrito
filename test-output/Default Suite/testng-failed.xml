@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="ExtremeBurrito(failed)">
+    <classes>
+      <class name="tests.extremeBurritoTest">
+        <methods>
+          <include name="launchApp"/>
+          <include name="tearDown"/>
+          <include name="careerPageTest" invocation-numbers="0"/>
+          <include name="aboutUsPageTest"/>
+        </methods>
+      </class> <!-- tests.extremeBurritoTest -->
+    </classes>
+  </test> <!-- ExtremeBurrito(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
